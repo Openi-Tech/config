@@ -1,6 +1,6 @@
 {
   "name": "@openi/config",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "UNLICENSED",
   "repository": "github:Openi-Tech/config",
   "files": [
@@ -11,13 +11,13 @@
   ],
   "type": "module",
   "exports": {
-    "./oxlint": "./oxlint/index.ts",
-    "./oxlint/plugin": "./oxlint/plugin.ts",
-    "./tsconfig/*": "./tsconfig/*.json",
-    "./oxfmt": "./oxfmt/index.ts"
+    "./oxlint": "./oxlint/index.js",
+    "./oxlint/plugin": "./oxlint/plugin.js",
+    "./oxfmt": "./oxfmt/index.js",
+    "./tsconfig/*": "./tsconfig/*.json"
   },
   "scripts": {
-    "check": "oxlint -c oxlint.config.ts --report-unused-disable-directives-severity=error && tsc --noEmit && oxfmt --check"
+    "check": "oxlint -c oxlint.config.js --report-unused-disable-directives-severity=error && tsc --noEmit && oxfmt --check"
   },
   "devDependencies": {
     "@oxlint/plugins": "1.80.0",
