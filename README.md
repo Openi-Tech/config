@@ -3,7 +3,7 @@
 Shared oxlint / oxfmt / tsconfig for Openi projects.
 
 ```bash
-bun add -d oxlint@1.80.0 @oxlint/plugins@1.80.0 oxfmt@0.65.0 'github:Openi-Tech/config#v0.3.1'
+bun add -d oxlint@1.80.0 @oxlint/plugins@1.80.0 oxfmt@0.65.0 'github:Openi-Tech/config#v0.4.0'
 ```
 
 Pin a tag; bump the tag to roll rule changes across repos. `oxlint`, `@oxlint/plugins` and `oxfmt` versions must match the peer range in `package.json`.

@@ -8,3 +8,7 @@ const load = async (on: boolean, fetchAll: () => Promise<number[]>) =>
   on ? await fetchAll() : []
 
 export { Nope, load }
+
+class DomainError extends Error {}
+
+export { DomainError }

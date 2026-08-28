@@ -4,13 +4,23 @@ const noClasses = defineRule({
   meta: {
     type: 'problem',
     docs: {
-      description: 'Plain consts and free functions instead of classes.',
+      description:
+        'Plain consts and free functions instead of classes; Error subclasses are allowed.',
     },
     messages: { noClass: 'Use plain consts and free functions, not classes.' },
   },
   createOnce(context) {
     /** @param {import('@oxlint/plugins').Node} node */
-    const report = node => context.report({ node, messageId: 'noClass' })
+    const report = node => {
+      const parent = node.superClass
+      const extendsError =
+        parent &&
+        ((parent.type === 'Identifier' && parent.name.endsWith('Error')) ||
+          (parent.type === 'MemberExpression' &&
+            parent.property.type === 'Identifier' &&
+            parent.property.name.endsWith('Error')))
+      if (!extendsError) context.report({ node, messageId: 'noClass' })
+    }
     return { ClassDeclaration: report, ClassExpression: report }
   },
 })

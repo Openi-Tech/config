@@ -31,16 +31,45 @@ export const base = defineConfig({
   },
 })
 
+const reactCompilerRules = [
+  'set-state-in-effect',
+  'incompatible-library',
+  'refs',
+  'capitalized-calls',
+  'exhaustive-effect-dependencies',
+  'memo-dependencies',
+  'static-components',
+  'preserve-manual-memoization',
+  'immutability',
+  'use-memo',
+  'purity',
+  'iframe-missing-sandbox',
+]
+
+const a11yRules = [
+  'label-has-associated-control',
+  'prefer-tag-over-role',
+  'click-events-have-key-events',
+  'no-static-element-interactions',
+  'no-autofocus',
+  'role-has-required-aria-props',
+  'no-noninteractive-element-interactions',
+  'control-has-associated-label',
+]
+
 /** @param {string[]} files @returns {Override} */
 export const react = files => ({
   files,
   plugins: ['react', 'jsx-a11y'],
   env: { browser: true },
+  categories: { pedantic: 'off' },
   rules: {
     'import/no-default-export': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    ...Object.fromEntries(reactCompilerRules.map(r => [`react/${r}`, 'off'])),
+    ...Object.fromEntries(a11yRules.map(r => [`jsx-a11y/${r}`, 'warn'])),
   },
 })
 
