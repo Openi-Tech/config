@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig/node.json",
+  "compilerOptions": { "allowImportingTsExtensions": true, "noEmit": true },
+  "include": ["oxlint/**/*.ts", "oxlint.config.ts"]
+}
