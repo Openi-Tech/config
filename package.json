@@ -1,33 +1,34 @@
 {
   "name": "@openi/config",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "license": "UNLICENSED",
+  "repository": "github:Openi-Tech/config",
+  "files": [
+    "oxlint",
+    "oxfmt",
+    "tsconfig",
+    "README.md"
+  ],
   "type": "module",
   "exports": {
     "./oxlint": "./oxlint/index.ts",
     "./oxlint/plugin": "./oxlint/plugin.ts",
-    "./prettier": "./prettier/index.js",
-    "./tsconfig/*": "./tsconfig/*.json"
+    "./tsconfig/*": "./tsconfig/*.json",
+    "./oxfmt": "./oxfmt/index.ts"
   },
-  "peerDependencies": {
-    "@oxlint/plugins": "1.80.0",
-    "oxlint": "1.80.0",
-    "prettier": ">=3"
+  "scripts": {
+    "check": "oxlint -c oxlint.config.ts --report-unused-disable-directives-severity=error && tsc --noEmit && oxfmt --check"
   },
-  "repository": "github:Openi-Tech/config",
-  "license": "UNLICENSED",
-  "files": [
-    "oxlint",
-    "prettier",
-    "tsconfig",
-    "README.md"
-  ],
   "devDependencies": {
     "@oxlint/plugins": "1.80.0",
     "bun-types": "^1.4.0",
+    "oxfmt": "0.65.0",
     "oxlint": "1.80.0",
     "typescript": "^7.0.2"
   },
-  "scripts": {
-    "check": "oxlint -c oxlint.config.ts --report-unused-disable-directives-severity=error && tsc --noEmit"
+  "peerDependencies": {
+    "@oxlint/plugins": "1.80.0",
+    "oxfmt": "0.65.0",
+    "oxlint": "1.80.0"
   }
 }

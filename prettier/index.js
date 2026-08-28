@@ -1,8 +1,0 @@
-export default {
-  singleQuote: true,
-  trailingComma: "all",
-  arrowParens: "avoid",
-  semi: false,
-  tabWidth: 2,
-  printWidth: 80,
-};
