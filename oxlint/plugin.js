@@ -10,7 +10,7 @@ const noClasses = defineRule({
     messages: { noClass: 'Use plain consts and free functions, not classes.' },
   },
   createOnce(context) {
-    /** @param {import('@oxlint/plugins').Node} node */
+    /** @param {import('@oxlint/plugins').ESTree.Class} node */
     const report = node => {
       const parent = node.superClass
       const extendsError =

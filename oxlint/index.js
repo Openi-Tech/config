@@ -62,7 +62,6 @@ export const react = files => ({
   files,
   plugins: ['react', 'jsx-a11y'],
   env: { browser: true },
-  categories: { pedantic: 'off' },
   rules: {
     'import/no-default-export': 'error',
     'react/react-in-jsx-scope': 'off',
