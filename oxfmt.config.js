@@ -1,5 +1,5 @@
-import { defineConfig } from 'oxfmt'
+import { defineConfig } from "oxfmt";
 
-import { base } from './oxfmt/index.js'
+import { base } from "./oxfmt/index.js";
 
-export default defineConfig({ ...base })
+export default defineConfig({ ...base });
