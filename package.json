@@ -17,7 +17,7 @@
     "./tsconfig/*": "./tsconfig/*.json"
   },
   "scripts": {
-    "check": "oxlint -c oxlint.config.js --report-unused-disable-directives-severity=error && tsc --noEmit && oxfmt --check"
+    "check": "oxlint -c oxlint.config.js --report-unused-disable-directives-severity=error && tsc --noEmit && oxfmt -c oxfmt.config.js --check"
   },
   "devDependencies": {
     "@oxlint/plugins": "1.80.0",
