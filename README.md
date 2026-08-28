@@ -10,26 +10,26 @@ Pin a tag; bump the tag to roll rule changes across repos. `oxlint`, `@oxlint/pl
 
 ```ts
 // oxlint.config.ts
-import { defineConfig } from "oxlint";
-import { base, configs, react, node, tests } from "@openi/config/oxlint";
+import { defineConfig } from 'oxlint'
+import { base, configs, react, node, tests } from '@openi/config/oxlint'
 
 export default defineConfig({
   extends: [base],
   overrides: [
-    react(["apps/web/**"]),
-    node(["apps/api/**", "packages/**"]),
-    tests(["**/*.test.ts"]),
+    react(['apps/web/**']),
+    node(['apps/api/**', 'packages/**']),
+    tests(['**/*.test.ts']),
     configs(),
   ],
-});
+})
 ```
 
 ```ts
 // oxfmt.config.mts
-import { defineConfig } from "oxfmt";
-import { base } from "@openi/config/oxfmt";
+import { defineConfig } from 'oxfmt'
+import { base } from '@openi/config/oxfmt'
 
-export default defineConfig({ ...base });
+export default defineConfig({ ...base })
 ```
 
 ```json
